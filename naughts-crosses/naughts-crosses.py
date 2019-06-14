@@ -1,4 +1,3 @@
-import random
 # create the board
 
 board = '''  
