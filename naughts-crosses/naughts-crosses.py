@@ -54,4 +54,9 @@ first_or_second()
 def place_counter():
     pass
 
-print(board.split())
+# split board to find numbers
+
+board.split()
+
+def player_position():
+    
