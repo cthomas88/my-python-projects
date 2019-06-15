@@ -40,23 +40,20 @@ def first_or_second():
     if choice1.lower() == 'first':
         print(f'''{player1_name}, you have chosen to use {player1_piece} 
         and have chosen to go first''')
-        input('Where would you like to place your first move? ')
+        global player1move1 = input('Using a number reference, where would you like to place your first move? ')
     else:
         print (f'''{player1_name}, you have chosen to use {player1_piece} 
         and have chosen to go second''')
-        input (f"""{player2_name}, you're up first, where would you like to make 
+        global player2move1 = input (f"""{player2_name}, you're up first, using a number reference, where would you like to make 
         your first move? """)
 
 first_or_second()
-
-# Placing counter
-
-def place_counter():
-    pass
 
 # split board to find numbers
 
 board.split()
 
-def player_position():
-    
+# Placing counter
+
+
+
