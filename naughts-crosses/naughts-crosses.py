@@ -1,9 +1,21 @@
 # create the board
 
-def board():
-    pass
+def display_board(board):
+    
+    print('   |   |')
+    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
+    print('   |   |')
+    print('-----------')
+    print('   |   |')
+    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6])
+    print('   |   |')
+    print('-----------')
+    print('   |   |')
+    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
+    print('   |   |')
 
-print (board)
+test_board = ['#','7','8','9','4','5','6','1','2','3']
+display_board(test_board)
 
 # Define game players
 
@@ -30,12 +42,7 @@ def first_or_second():
     else:
         print (f'''{player1_name}, you have chosen to use {player1_piece} 
         and have chosen to go second''')
-        position1 = input (int(f"""{player2_name}, you're up first, using a number reference, where would you like to make 
+        position1 = int (input(f"""{player2_name}, you're up first, using a number reference, where would you like to make 
         your first move? """))
 
 first_or_second()
-
-
-
-
-
