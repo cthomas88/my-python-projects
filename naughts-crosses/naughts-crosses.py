@@ -1,20 +1,7 @@
 # create the board
 
-board = '''  
-
-               |     |    
-            1  |  2  |  3   
-               |     |
-         -------------------
-               |     |    
-            4  |  5  |  6   
-               |     |
-         -------------------
-               |     |    
-            7  |  8  |  9  
-               |     | 
-               
-               '''
+def board():
+    pass
 
 print (board)
 
@@ -31,29 +18,24 @@ player2_piece = ''
 if player1_piece == 'X':
     player2_piece == 'O'
 else:
-    player1_piece == 'O' 
+    player1_piece == 'O'
 
 # First or second
-
 def first_or_second():
     choice1 = input(f'{player1_name}, would you like to go first or second? ')
     if choice1.lower() == 'first':
         print(f'''{player1_name}, you have chosen to use {player1_piece} 
         and have chosen to go first''')
-        global player1move1 = input('Using a number reference, where would you like to place your first move? ')
+        position1 = int (input('Using a number reference, where would you like to place your first move? '))
     else:
         print (f'''{player1_name}, you have chosen to use {player1_piece} 
         and have chosen to go second''')
-        global player2move1 = input (f"""{player2_name}, you're up first, using a number reference, where would you like to make 
-        your first move? """)
+        position1 = input (int(f"""{player2_name}, you're up first, using a number reference, where would you like to make 
+        your first move? """))
 
 first_or_second()
 
-# split board to find numbers
 
-board.split()
-
-# Placing counter
 
 
 
