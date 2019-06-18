@@ -31,6 +31,8 @@ if player1_piece == 'X':
     player2_piece == 'O'
 else:
     player1_piece == 'O'
+    player2_piece == 'X'
+    
 
 # First or second
 def first_or_second():
@@ -46,3 +48,6 @@ def first_or_second():
         your first move? """))
 
 first_or_second()
+
+start_game = []
+
