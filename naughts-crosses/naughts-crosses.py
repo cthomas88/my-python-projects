@@ -14,24 +14,24 @@ def display_board(board):
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
 
-test_board = ['#','7','8','9','4','5','6','1','2','3']
-display_board(test_board)
-
-# Define game players
+# Define game players names
 
 player1_name = input('What is your name player 1? ')
 player2_name = input('What is your name player 2? ')
 
 # Players choose their playing piece
-
-player1_piece = input(f'{player1_name} what character would you like to play? X or O ')
-player2_piece = ''
-
-if player1_piece == 'X':
-    player2_piece == 'O'
-else:
-    player1_piece == 'O'
-    player2_piece == 'X'
+def player_input():
+    marker = ''
+     while marker.lower() != 'X' and marker.lower != 'O':
+         marker = input(f'{player1_name} please choose either X or 0: ')
+    
+    player1 = marker
+    if player1 == 'X':
+        player2 = 'O'
+    else:
+        player2 = 'X'
+    
+    return (player1, player2)
     
 
 # First or second
