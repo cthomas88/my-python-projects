@@ -1,6 +1,7 @@
 # create the board
 
 def display_board(board):
+    print('\n'*50)
     print('   |   |')
     print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9])
     print('   |   |')
@@ -12,8 +13,8 @@ def display_board(board):
     print('   |   |')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
-    print('\n'*50)
-        
+    
+
 starting_board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 display_board(starting_board)
 
@@ -56,9 +57,3 @@ first_or_second()
 def place_marker(board, marker, position):
 
     board[position] = marker
-
-test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
-
-place_marker(test_board, 'A', 8)
-display_board(test_board)
-
