@@ -22,16 +22,19 @@ player2_name = input('What is your name player 2? ')
 # Players choose their playing piece
 def player_input():
     marker = ''
-    while marker.lower() != 'X' and marker.lower != 'O':
-        marker = input(f'{player1_name} please choose either X or 0: ')
+    while marker != 'X' and marker != 'O':
+        marker = input(f'{player1_name} please choose either X or O: ').upper()
     
     player1 = marker
     if player1 == 'X':
-        player2 = 'O'
+        return ('X', 'O')
     else:
-        player2 = 'X'
+        return ('O', 'X')
     
     return (player1, player2)
+
+player1, player2 = player_input()
+
     
 
 # First or second
@@ -50,4 +53,4 @@ def first_or_second():
 first_or_second()
 
 start_game = []
-C
+
