@@ -40,9 +40,8 @@ def player_input():
 
 player1, player2 = player_input()
 
-    
-
 # First or second
+
 def first_or_second():
     choice1 = input(f'{player1_name}, would you like to go first or second? ')
     if choice1.lower() == 'first':
@@ -57,3 +56,18 @@ first_or_second()
 def place_marker(board, marker, position):
 
     board[position] = marker
+
+def check_winner(board, mark):
+    return ((mark == board[1] and mark == board[2] and mark == board[3]) or
+    (mark == board[4] and mark == board[5] and mark == board[6]) or
+    (mark == board[7] and mark == board[8] and mark == board[9]) or
+    (mark == board[7] and mark == board[4] and mark == board[1]) or
+    (mark == board[8] and mark == board[5] and mark == board[2]) or
+    (mark == board[9] and mark == board[6] and mark == board[3]) or
+    (mark == board[9] and mark == board[5] and mark == board[1]) or
+    (mark == board[7] and mark == board[5] and mark == board[3]))
+
+test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
+
+
+    
