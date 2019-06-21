@@ -67,7 +67,7 @@ def check_winner(board, mark):
     (mark == board[9] and mark == board[5] and mark == board[1]) or
     (mark == board[7] and mark == board[5] and mark == board[3]))
 
-test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
+# test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
 
 
     
