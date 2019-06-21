@@ -51,8 +51,6 @@ def first_or_second():
         print (f'''{player1_name}, you have chosen to use {player1} 
         and have chosen to go second''')
 
-first_or_second()
-
 def place_marker(board, marker, position):
 
     board[position] = marker
