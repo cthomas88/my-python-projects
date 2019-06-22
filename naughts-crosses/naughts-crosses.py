@@ -44,17 +44,23 @@ player1, player2 = player_input()
 # First or second
 
 def first_or_second():
-    choice1 = input(f'{player1_name}, would you like to go first or second? ')
-    if choice1.lower() == 'first':
-        print(f'''{player1_name}, you have chosen to use {player1} 
-        and have chosen to go first''')
+
+    p1choice = input(f'{player1_name} choose heads or tails: ')
+     
+    flip = random.randint(1, 2)
+
+    if flip == 1 and p1choice.lower() == 'heads':
+        print (f'{player1_name} the coin has landed on heads, you go first!')
     else:
-        print (f'''{player1_name}, you have chosen to use {player1} 
-        and have chosen to go second''')
+        print (f'{player1_name} the coin has landed on tails, {player2_name} you go first!')
+
+# Choose where to place your first move
 
 def place_marker(board, marker, position):
 
     board[position] = marker
+
+# Check whether anyone has won the game
 
 def check_winner(board, mark):
     return ((board[1] == board[2] == board[3] == mark) or
