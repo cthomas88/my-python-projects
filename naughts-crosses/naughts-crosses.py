@@ -56,14 +56,14 @@ def place_marker(board, marker, position):
     board[position] = marker
 
 def check_winner(board, mark):
-    return ((mark == board[1] and mark == board[2] and mark == board[3]) or
-    (mark == board[4] and mark == board[5] and mark == board[6]) or
-    (mark == board[7] and mark == board[8] and mark == board[9]) or
-    (mark == board[7] and mark == board[4] and mark == board[1]) or
-    (mark == board[8] and mark == board[5] and mark == board[2]) or
-    (mark == board[9] and mark == board[6] and mark == board[3]) or
-    (mark == board[9] and mark == board[5] and mark == board[1]) or
-    (mark == board[7] and mark == board[5] and mark == board[3]))
+    return ((board[1] == board[2] == board[3] == mark) or
+    (board[4] == board[5] == board[6] == mark) or
+    (board[7] == board[8] == board[9] == mark) or
+    (board[7] == board[4] == board[1] == mark) or
+    (board[8] == board[5] == board[2] == mark) or
+    (board[9] == board[6] == board[3] == mark) or
+    (board[9] == board[5] == board[1] == mark) or
+    (board[7] == board[5] == board[3] == mark))
 
 # test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
 
