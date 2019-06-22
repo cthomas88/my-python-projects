@@ -1,3 +1,4 @@
+import random
 # create the board
 
 def display_board(board):
