@@ -15,7 +15,7 @@ def display_board(board):
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
     
-
+# test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
 starting_board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 display_board(starting_board)
 
@@ -72,7 +72,17 @@ def check_winner(board, mark):
     (board[9] == board[5] == board[1] == mark) or
     (board[7] == board[5] == board[3] == mark))
 
-# test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
+# Check whether a space is free
 
+def space_check (board, position):
 
-    
+    return board[position] == '1' or
+    board[position] == '2' or
+    board[position] == '3' or
+    board[position] == '4' or
+    board[position] == '5' or
+    board[position] == '6' or
+    board[position] == '7' or
+    board[position] == '8' or
+    board[position] == '9'
+
