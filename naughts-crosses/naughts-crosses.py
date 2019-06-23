@@ -123,9 +123,43 @@ while True:
     turn = first_or_second()
     print (turn)
 
-    ### First player turn
+    play_game = input('Are you ready to start the game? ')
 
-    ### Second player turn
+    if play_game.lower = 'yes':
+        game_on = True
+    else:
+        game_on = False
+
+    while game_on:
+
+        if turn == player1_name:
+
+            # Show the board
+            display_board(the_board)
+            # Choose a position
+            position = player_choice(the_board)
+            # Place the marker on the position
+            place_marker(the_board, player1, position)
+            # Check if they won
+            if check_winner(the_board, player1):
+                display_board(the_board)
+                print (f'{player1_name} congratulations, you have won!!')
+                game_on = False
+            # Check if there is a tie
+
+            # If no tie and no win next player's turn
+
+
+        ### First player turn
+
+        else:
+
+        ### Second player turn
+
+
+    
+
+    
 
 
 
