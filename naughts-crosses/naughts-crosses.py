@@ -14,10 +14,6 @@ def display_board(board):
     print('   |   |')
     print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3])
     print('   |   |')
-    
-# test_board = ['#', 'X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
-starting_board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-display_board(starting_board)
 
 # Define game players names
 
@@ -39,8 +35,6 @@ def player_input():
     
     return (player1, player2)
 
-player1, player2 = player_input()
-
 # First or second
 
 def first_or_second():
@@ -50,9 +44,9 @@ def first_or_second():
     flip = random.randint(1, 2)
 
     if flip == 1 and p1choice.lower() == 'heads':
-        print (f'{player1_name} the coin has landed on heads, you go first!')
+        return (player1_name + " the coin landed on heads, you're up frist!")
     else:
-        print (f'{player1_name} the coin has landed on tails, {player2_name} you go first!')
+        return (player2_name + " the coin landed on tails, you're up first!")
 
 # Choose where to place your first move
 
@@ -76,15 +70,17 @@ def check_winner(board, mark):
 
 def space_check (board, position):
 
-    return board[position] == '1' or
-    board[position] == '2' or
-    board[position] == '3' or
-    board[position] == '4' or
-    board[position] == '5' or
-    board[position] == '6' or
-    board[position] == '7' or
-    board[position] == '8' or
-    board[position] == '9'
+    return ((board[position] == '1') or
+    (board[position] == '2') or
+    (board[position] == '3') or
+    (board[position] == '4') or
+    (board[position] == '5') or
+    (board[position] == '6') or
+    (board[position] == '7') or
+    (board[position] == '8') or
+    (board[position] == '9'))
+
+    return True
 
 # Check if board is full
 
@@ -112,4 +108,33 @@ def replay():
 
     return replay_y_n.lower[0] == 'y'
 
+# While loop that keeps the game running
+
+print ('WELCOME TO NAUGHTS AND CROSSES!!')
+
+while True:
+    # Play the game
+
+    ## Set everything up (board, name, who's first, marker choice)
+
+    the_board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    player1, player2 = player_input()
+
+    turn = first_or_second()
+    print (turn)
+
+    ### First player turn
+
+    ### Second player turn
+
+
+
+
+
+
+
+
+    if not replay():
+        break
+# Break out of the while loop while on replay()
 
