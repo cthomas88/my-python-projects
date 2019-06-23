@@ -106,3 +106,10 @@ def player_choice(board):
     
     return position
 
+def replay():
+
+    replay_y_n = input('GAME OVER!! Would you like to play again? Yes or No: ')
+
+    return replay_y_n.lower[0] == 'y'
+
+
