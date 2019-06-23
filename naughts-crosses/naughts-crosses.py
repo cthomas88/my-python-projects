@@ -86,3 +86,12 @@ def space_check (board, position):
     board[position] == '8' or
     board[position] == '9'
 
+# Check if board is full
+
+def full_board_check(board):
+    for i in range(1, 10):
+        if space_check(board, i):
+            return False
+
+    return True
+    
