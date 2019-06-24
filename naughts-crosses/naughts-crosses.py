@@ -45,8 +45,12 @@ def first_or_second():
 
     if flip == 1 and p1choice.lower() == 'heads':
         return (player1_name + " the coin landed on heads, you're up frist!")
+    elif flip == 1 and p1choice.lower() == 'tails':
+        return (player2_name + f" the coin landed on heads, {player2_name}, you're up first!")
+    elif flip == 2 and p1choice.lower() == 'heads':
+        return (player1_name + f" the coin landed on tails, {player2_name}, you're up first!")
     else:
-        return (player2_name + " the coin landed on tails, you're up first!")
+        return (player1_name + " the coin landed on tails, you're up first!")
 
 # Choose where to place your first move
 
@@ -104,9 +108,9 @@ def player_choice(board):
 
 def replay():
 
-    replay_y_n = input('GAME OVER!! Would you like to play again? Yes or No: ')
+    return input('GAME OVER!! Would you like to play again? Yes or No: ').lower().startswith()
 
-    return replay_y_n.lower[0] == 'y'
+    
 
 # While loop that keeps the game running
 
@@ -125,7 +129,7 @@ while True:
 
     play_game = input('Are you ready to start the game? ')
 
-    if play_game.lower = 'yes':
+    if play_game.lower() == 'yes':
         game_on = True
     else:
         game_on = False
