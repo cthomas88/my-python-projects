@@ -18,14 +18,14 @@ def display_board(board):
 # Define game players names
 
 player1_name = input('What is your name player 1? ')
-player2_name = input('What is your name player 2? ')
+player2_name = input('\nWhat is your name player 2? ')
 
 # Players choose their playing piece
 
 def player_input():
     marker = ''
     while not (marker == 'X' or marker == 'O'):
-        marker = input(f'{player1_name} please choose either X or O: ').upper()
+        marker = input(f'\n{player1_name} please choose either X or O: ').upper()
     
     player1 = marker
     if player1 == 'X':
@@ -39,7 +39,8 @@ def player_input():
 
 def first_or_second():
 
-    p1choice = input(f'{player1_name} choose heads or tails: ')
+    p1choice = input(f'\n{player1_name} choose heads or tails: ')
+    print('\n')
      
     flip = random.randint(1, 2)
 
@@ -85,6 +86,7 @@ def space_check (board, position):
     (board[position] == '9'))
 
     return True
+    
 
 # Check if board is full
 
@@ -102,13 +104,13 @@ def player_choice(board):
     position = 0
 
     while position not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
-        position = int(input('Please enter a position to place your piece (1-9): '))
+        position = int(input('\nPlease enter a position to place your piece (1-9): '))
     
     return position
 
 def replay():
 
-    yes_or_no = input('GAME OVER!! Would you like to play again? Yes or No: ').lower()
+    yes_or_no = input('\nGAME OVER!! Would you like to play again? Yes or No: ').lower()
 
     if yes_or_no[0] == 'y':
         return True
@@ -119,7 +121,7 @@ def replay():
 
 # While loop that keeps the game running
 
-print ('WELCOME TO NAUGHTS AND CROSSES!!')
+print ('\nWELCOME TO NAUGHTS AND CROSSES!!')
 
 while True:
     # Play the game
@@ -132,7 +134,7 @@ while True:
     turn = first_or_second()
     print (turn)
 
-    play_game = input('Are you ready to start the game? ')
+    play_game = input('\nAre you ready to start the game? ')
 
     if play_game.lower() == 'yes':
         game_on = True
@@ -152,12 +154,12 @@ while True:
             # Check if they won
             if check_winner(the_board, player1):
                 display_board(the_board)
-                print (f'{player1_name} congratulations, you have won!!')
+                print (f'\n{player1_name} congratulations, you have won!!')
                 game_on = False
             else:
                 if full_board_check(the_board):
                     display_board(the_board)
-                    print ('This game is a tie!')
+                    print ('\nThis game is a tie!')
                     game_on = False
                 else:
                     turn = player2_name
@@ -179,12 +181,12 @@ while True:
             # Check if they won
             if check_winner(the_board, player2):
                 display_board(the_board)
-                print (f'{player2_name} congratulations, you have won!!')
+                print (f'\n{player2_name} congratulations, you have won!!')
                 game_on = False
             else:
                 if full_board_check(the_board):
                     display_board(the_board)
-                    print ('This game is a tie!')
+                    print ('\nThis game is a tie!')
                     game_on = False
                 else:
                     turn = player1_name
