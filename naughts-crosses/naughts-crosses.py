@@ -145,7 +145,14 @@ while True:
                 display_board(the_board)
                 print (f'{player1_name} congratulations, you have won!!')
                 game_on = False
-            # Check if there is a tie
+            else:
+                if full_board_check(the_board):
+                    display_board(the_board)
+                    print ('This game is a tie!')
+                    game_on = False
+                else:
+                    turn = player2_name
+            
 
             # If no tie and no win next player's turn
 
@@ -154,19 +161,24 @@ while True:
 
         else:
 
-        ### Second player turn
-
-
-    
-
-    
-
-
-
-
-
-
-
+            # Show the board
+            display_board(the_board)
+            # Choose a position
+            position = player_choice(the_board)
+            # Place the marker on the position
+            place_marker(the_board, player2, position)
+            # Check if they won
+            if check_winner(the_board, player2):
+                display_board(the_board)
+                print (f'{player2_name} congratulations, you have won!!')
+                game_on = False
+            else:
+                if full_board_check(the_board):
+                    display_board(the_board)
+                    print ('This game is a tie!')
+                    game_on = False
+                else:
+                    turn = player1_name
 
     if not replay():
         break
