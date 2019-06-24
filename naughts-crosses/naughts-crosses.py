@@ -108,7 +108,12 @@ def player_choice(board):
 
 def replay():
 
-    return input('GAME OVER!! Would you like to play again? Yes or No: ').lower().startswith()
+    yes_or_no = input('GAME OVER!! Would you like to play again? Yes or No: ').lower()
+
+    if yes_or_no[0] == 'y':
+        return True
+    else:
+        return False
 
     
 
