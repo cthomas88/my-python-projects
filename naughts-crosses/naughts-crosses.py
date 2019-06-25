@@ -21,7 +21,6 @@ def display_board(board):
 player1_name = input('\nWhat is your name player 1? ')
 player2_name = input('\nWhat is your name player 2? ')
 
-
 # Players choose their playing piece
 
 
@@ -30,8 +29,8 @@ def player_input():
     while not (marker == 'X' or marker == 'O'):
         marker = input(f'\n{player1_name} please choose either X or O: ').upper()
     
-    player1 = marker
-    if player1 == 'X':
+    
+    if marker == 'X':
         return ('X', 'O')
     else:
         return ('O', 'X')
@@ -51,10 +50,10 @@ def first_or_second():
     if flip == 1 and p1choice.lower() == 'heads':
         return (player1_name + " the coin landed on heads, you're up frist!")
     elif flip == 1 and p1choice.lower() == 'tails':
-        return (player2_name + f" the coin landed on heads, {player2_name}, you're up first!")
+        return (player1_name + f" the coin landed on heads, {player2_name}, you're up first!")
     elif flip == 2 and p1choice.lower() == 'heads':
         return (player1_name + f" the coin landed on tails, {player2_name}, you're up first!")
-    else:
+    elif flip == 2 and p1choice.lower() == 'tails':
         return (player1_name + " the coin landed on tails, you're up first!")
 
 # Choose where to place your first move
@@ -134,9 +133,11 @@ while True:
     # Set everything up (board, name, who's first, marker choice)
 
     the_board = ['#', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    player1, player2 = player_input()
 
     turn = first_or_second()
+    
+    player1, player2 = player_input()
+
     print(turn)
 
     play_game = input(f'\n{player1_name} and {player2_name} are you ready to start the game? ')
@@ -148,7 +149,7 @@ while True:
 
     while game_on:
 
-        if turn == player1_name:
+        if turn == player1_name + " the coin landed on heads, you're up frist!" or turn == player1_name + " the coin landed on tails, you're up first!":
 
             # Show the board
             display_board(the_board)
@@ -167,13 +168,13 @@ while True:
                     print('\nThis game is a tie!')
                     game_on = False
                 else:
-                    turn = player2_name
+                    turn = player1_name + f" the coin landed on heads, {player2_name}, you're up first!"
 
             # If no tie and no win next player's turn
 
         # First player turn
 
-        else:
+        elif turn == player1_name + f" the coin landed on heads, {player2_name}, you're up first!" or turn == player1_name + f" the coin landed on tails, {player2_name}, you're up first!":
 
             # Show the board
             display_board(the_board)
@@ -192,8 +193,9 @@ while True:
                     print('\nThis game is a tie!')
                     game_on = False
                 else:
-                    turn = player1_name
+                    turn = player1_name + " the coin landed on heads, you're up frist!"
 
     if not replay():
+        print(f'\nThanks for playing {player1_name} and {player2_name}, see you next time!')
         break
 # Break out of the while loop while on replay()
