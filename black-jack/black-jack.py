@@ -11,34 +11,51 @@ values = {'Two': 2, 'Three': 3, 'Four': 4, 'Five': 5,
 
 playing = True
 
+
 class Card:
 
-    def __init__(self, suit, rank)
+    def __init__(self, suit, rank):
 
-         self.suit = suit
-         self.rank = rank
+        self.suit = suit
+        self.rank = rank
 
-    def __str__ (self):
-        return self.rank + 'of' + self.suit
+    def __str__(self):
+        return self.rank + ' of ' + self.suit
+
 
 class Deck:
 
-    def __init__ (self):
+    def __init__(self):
         self.deck = []
 
         for suit in suits:
             for rank in ranks:
-                self.deck.append (Card(suit, rank)) # Builds card objects and adds them to a list
-    
-    def __str__ (self):
+                self.deck.append(Card(suit, rank))  # Builds card objects and adds them to a list
+
+    def __str__(self):
         deck_comp = ''
         for card in self.deck:
-            deck_comp += '\n ' +card.__str__()
+            deck_comp += '\n ' + card.__str__()
         return "The deck has: " + deck_comp
-    
+
     def shuffle(self):
         random.shuffle(self.deck)
-    
+
     def deal(self):
         single_card = self.deck.pop()
         return single_card
+
+
+class Hand:
+
+    def __init__(self):
+        self.cards = []
+        self.value = 0
+        self.aces = 0
+
+    def add_card(self, card):
+        self.cards.append(card)
+        self.value += values[card.rank]
+
+    def adjust_for_ace(self):
+        pass
