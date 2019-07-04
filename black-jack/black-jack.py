@@ -85,7 +85,8 @@ class Chips:
         self.total -= self.bet
 
 
-def take_bet():
+def take_bet(chips):
+
     while True:
 
         try:
@@ -148,7 +149,7 @@ def show_all(player, dealer):
 
 def player_busts(player, dealer, chips):
     print("BUST PLAYER!")
-    chip.lose_bet()
+    chips.lose_bet()
 
 
 def player_wins(player, dealer, chips):
@@ -222,7 +223,7 @@ while True:
 
     new_game = input("Would you like to play another hand? ")
 
-    if new_game[0].lower == 'y':
+    if new_game[0].lower() == 'y':
         playing = True
         continue
     else:
