@@ -54,8 +54,19 @@ class Hand:
         self.aces = 0
 
     def add_card(self, card):
+        # card passed in
+        # from Deck.deal() --> single Card(suit, rank)
         self.cards.append(card)
         self.value += values[card.rank]
 
+        if card.rank == 'Ace':
+            self.aces += 1
+
     def adjust_for_ace(self):
-        pass
+        
+        # if total value greater than 21 and
+        # I still have an ace, then change my ace
+        # to be a 1, instead of an 11
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1
