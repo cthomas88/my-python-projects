@@ -63,7 +63,7 @@ class Hand:
             self.aces += 1
 
     def adjust_for_ace(self):
-        
+
         # if total value greater than 21 and
         # I still have an ace, then change my ace
         # to be a 1, instead of an 11
@@ -83,6 +83,7 @@ class Chips:
 
     def lose_bet(self):
         self.total -= self.bet
+
 
 def take_bet():
     while True:
@@ -119,8 +120,9 @@ def hit_or_stand(deck, hand):
         else:
             print("Sorry, I didn't understand that, please enter h or s only!")
             continue
-        
+
         break
+
 
 def show_some(player, dealer):
 
@@ -168,3 +170,61 @@ def push(player, dealer):
     print("Dealer and player have tied! PUSH!")
 
 
+while True:
+
+    print("WELCOME TO BLACKJACK!!")
+
+    deck = Deck()
+    deck.shuffle()
+
+    player_hand = Hand()
+    player_hand.add_card(deck.deal())
+    player_hand.add_card(deck.deal())
+
+    dealer_hand = Hand()
+    dealer_hand.add_card(deck.deal())
+    dealer_hand.add_card(deck.deal())
+
+    player_chips = Chips()
+
+    take_bet(player_chips)
+
+    show_some(player_hand, dealer_hand)
+
+    while playing:
+
+        hit_or_stand(deck, player_hand)
+
+        show_some(player_hand, dealer_hand)
+
+        if player_hand.value > 21:
+            player_busts(player_hand, dealer_hand, player_chips)
+
+            break
+
+    if player_hand.value <= 21:
+
+        while dealer_hand.value < 17:
+            hit(deck, dealer_hand)
+
+        show_all(player_hand, dealer_hand)
+
+        if dealer_hand.value > 21:
+            dealer_busts(player_hand, dealer_hand, player_chips)
+        elif dealer_hand.value > player_hand.value:
+            dealer_wins(player_hand, dealer_hand, player_chips)
+        elif dealer_hand.value < player_hand.value:
+            player_wins(player_hand, dealer_hand, player_chips)
+        else:
+            push(player_hand, dealer_hand)
+
+    print(f"\n Player's total chips: {player_chips.total}")
+
+    new_game = input("Would you like to play another hand? ")
+
+    if new_game[0].lower == 'y':
+        playing = True
+        continue
+    else:
+        print("Thank you for playing! See you soon")
+        break
