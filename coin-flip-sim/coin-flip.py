@@ -3,9 +3,12 @@ import random
 # Global variables
 user_number = int(input('Please enter the number of times you would like the computer to flip your coin: '))
 
+# Continue playing
+
+playing = True
+
 
 # Function that produces a head or tails
-
 
 def coin_toss():
 
@@ -18,6 +21,6 @@ def coin_toss():
     
     return heads_or_tails
 
-def number_of_throws():
 
+def number_of_throws():
     
