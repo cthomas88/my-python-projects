@@ -1,26 +1,31 @@
 import random
 
-# Global variables
-user_number = int(input('Please enter the number of times you would like the computer to flip your coin: '))
+def coin_flip():
 
-# Continue playing
+    flip = random.randint(0, 51)
 
-playing = True
-
-
-# Function that produces a head or tails
-
-def coin_toss():
-
-    heads_or_tails = random.randint(0, 51)
-
-    if heads_or_tails %2 == 0:
-        heads_or_tails = 'heads'
+    if flip % 2 == 0:
+        return True
     else:
-        heads_or_tails = 'tails'
+        return False
     
-    return heads_or_tails
+def game(num):
 
+    heads = 0
+    tails = 0
+    list_results = []
 
-def number_of_throws():
+    for i in range(num):
+        if coin_flip():
+            heads += 1
+            list_results.append('Heads')
+        else:
+            tails += 1
+            list_results.append('Tails')
     
+    print(f'The number of times the coin landed heads was {heads}')
+    print(f'The number of times the coin landed tails was {tails}')
+    print(list_results)
+
+number_of_throws = int(input('How many times would you like to toss the coin? '))
+game(number_of_throws)
